@@ -1,0 +1,12 @@
+{
+  "name": "stage-project",
+  "version": "1.0.0",
+  "description": "Projet Test pour débuter le stage sur le Dev JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
