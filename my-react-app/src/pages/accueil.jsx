@@ -1,9 +1,11 @@
-
+import {AppWindow} from "@phosphor-icons/react";
 
 export function Accueil() {
-    return(
-        <>
-            <h1>Accueil</h1>
-        </>
+    console.log('Hello from component')
+    return (
+        <div>
+            <AppWindow size={32} weight="fill"/>
+            <p>Hello world</p>
+        </div>
     )
 }
