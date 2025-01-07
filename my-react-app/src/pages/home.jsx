@@ -1,6 +1,6 @@
 import {AppWindow} from "@phosphor-icons/react";
 
-export function Accueil() {
+export function Home() {
     console.log('Hello from component')
     return (
         <div>
