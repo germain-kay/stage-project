@@ -5,7 +5,7 @@ export function Home() {
     return (
         <div>
             <AppWindow size={32} weight="fill"/>
-            <p>Hello world</p>
+            <p>Accueil</p>
         </div>
     )
 }

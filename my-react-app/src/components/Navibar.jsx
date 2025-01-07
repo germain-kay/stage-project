@@ -4,10 +4,10 @@ export function Navibar() {
     return (
         <>
             <Link to="/">
-                 <button>Accueil</button>
+                 Accueil
             </Link>
-            <Link to="/Clients">
-                <button>Clients</button>
+            <Link to="/clients">
+                Clients
             </Link>
         </>
     )
