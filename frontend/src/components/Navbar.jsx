@@ -141,7 +141,7 @@ export function Navbar() {
                             <img
                                 alt="Your Company"
                                 src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500"
-                                className="shrink-0 size-8"
+                                className="size-8"
                             />
                             <DesktopMenu />
                         </div>
@@ -163,3 +163,5 @@ export function Navbar() {
         </div>
     );
 }
+
+
