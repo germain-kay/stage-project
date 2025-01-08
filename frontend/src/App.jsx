@@ -2,7 +2,7 @@ import './App.css'
 import {Routes, Route } from "react-router-dom";
 import {Home} from "./pages/home.jsx";
 import {Clients} from "./pages/clients.jsx";
-import {Layout} from "./Layout.jsx";
+import {Layout} from "./components/Layout.jsx";
 
 
 const App = () => {

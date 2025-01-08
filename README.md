@@ -22,6 +22,13 @@ https://vitejs.fr/guide/why.html
 https://tailwindcss.com/docs/installation
 https://phosphoricons.com/
 
+Voici la suite des instructions :
+
+* Je veux que construise plusieurs pages dans ton application :
+https://www.youtube.com/watch?v=qi32YwjoN2U
+
+* L'ajout de plusieurs pages en intégrant la notion de route :
+https://reactrouter.com/
 
 Objectif : avoir une application front publié dans un projet git en mode collaboratif qui affiche le texte Hello World avec une icone.
 
