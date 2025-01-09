@@ -1,12 +1,4 @@
-import {
-    Disclosure,
-    DisclosureButton,
-    DisclosurePanel,
-    Menu,
-    MenuButton,
-    MenuItem,
-    MenuItems,
-} from '@headlessui/react';
+import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems,} from '@headlessui/react';
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import React from 'react';
 
@@ -22,9 +14,9 @@ const navigation = [
 ];
 
 const userNavigation = [
-    { name: 'Your Profile', href: '#' },
-    { name: 'Settings', href: '#' },
-    { name: 'Sign out', href: '#' },
+    { name: 'Your Profile', href: '/' },
+    { name: 'Settings', href: '/' },
+    { name: 'Sign out', href: '/' },
 ];
 
 const combineClassNames = (...classes) => classes.filter(Boolean).join(' ');
@@ -133,7 +125,7 @@ const MobileMenu = () => (
 
 export function Navbar() {
     return (
-        <div className="min-h-full">
+        <div className="mh-full">
             <Disclosure as="nav" className="bg-gray-800">
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div className="flex h-16 items-center justify-between">
