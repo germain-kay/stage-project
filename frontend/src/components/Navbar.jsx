@@ -125,7 +125,7 @@ const MobileMenu = () => (
 
 export function Navbar() {
     return (
-        <div className="mh-full">
+        <div className="min-mh-full">
             <Disclosure as="nav" className="bg-gray-800">
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div className="flex h-16 items-center justify-between">
@@ -135,22 +135,22 @@ export function Navbar() {
                                 src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500"
                                 className="size-8"
                             />
-                            <DesktopMenu />
+                            <DesktopMenu/>
                         </div>
                         <div className="hidden md:block">
-                            <ProfileMenu />
+                            <ProfileMenu/>
                         </div>
                         <div className="-mr-2 flex md:hidden">
                             <DisclosureButton
                                 className="relative inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                             >
-                                <Bars3Icon aria-hidden="true" className="block size-6 group-data-[open]:hidden" />
-                                <XMarkIcon aria-hidden="true" className="hidden size-6 group-data-[open]:block" />
+                                <Bars3Icon aria-hidden="true" className="block size-6 group-data-[open]:hidden"/>
+                                <XMarkIcon aria-hidden="true" className="hidden size-6 group-data-[open]:block"/>
                             </DisclosureButton>
                         </div>
                     </div>
                 </div>
-                <MobileMenu />
+                <MobileMenu/>
             </Disclosure>
         </div>
     );
