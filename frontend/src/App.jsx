@@ -1,4 +1,3 @@
-    import './App.css'
 import {Routes, Route } from "react-router-dom";
 import {Home} from "./pages/home.jsx";
 import {Clients} from "./pages/clients.jsx";

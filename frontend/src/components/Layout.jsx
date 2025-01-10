@@ -1,12 +1,10 @@
-import {Navbar} from "./Navbar.jsx";
-import {Outlet} from "react-router-dom";
-import Header from "./Header.jsx";
+import Navibar from "./Navibar.jsx";
+import { Outlet } from "react-router-dom";
 
 export function Layout() {
     return (
         <>
-            <Navbar />
-            <Header/>
+            <Navibar />
             <main>
                 <Outlet />
             </main>
