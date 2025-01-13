@@ -16,7 +16,7 @@ function Page() {
         <div className="App">
             <header className="App-header">
                 <h4 className="App-title">
-                    <Trans i18nKey="title--produits">
+                    <Trans i18nKey="title-produits">
                     </Trans>
                 </h4>
                 <div>
@@ -32,7 +32,7 @@ function Page() {
                 <p>
                 </p>
                 <p>
-                    <Trans i18nKey="description--produits.part1">
+                    <Trans i18nKey="description-produits.part1">
                         Edit <code>src/App.js</code> and save to reload.
                     </Trans>
                 </p>
