@@ -1,0 +1,17 @@
+{
+  "title": "Willkommen zu react und react-i18next",
+  "description": {
+    "part1": "Um loszulegen, ändere <1>src/App(DE).js</1> und speichere um neuzuladen.",
+    "part2": "Wechseln Sie die Sprache zwischen Englisch, Französisch und Deutsch, indem Sie die Schaltflächen oben verwenden."
+  },
+  "title-client": "Willkommen Meine Kunden",
+  "description-client": {
+    "part1": "Um loszulegen, ändere <1>src/App(DE).js</1> und speichere um neuzuladen.",
+    "part2": "Wechseln Sie die Sprache zwischen Englisch, Französisch und Deutsch, indem Sie die Schaltflächen oben verwenden."
+  },
+  "title-produits": "Produktseite",
+  "description-produits": {
+    "part1": "Um loszulegen, ändere <1>src/App(DE).js</1> und speichere um neuzuladen.",
+    "part2": "Wechseln Sie die Sprache zwischen Englisch, Französisch und Deutsch, indem Sie die Schaltflächen oben verwenden."
+  }
+}

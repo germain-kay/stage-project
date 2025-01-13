@@ -1,0 +1,17 @@
+{
+"title": "Bienvenue dans react avec react-i18next",
+"description": {
+"part1": "Pour commencer, modifiez <1>src/App.js</1> et enregistrez pour recharger.",
+"part2": "Changez de langue entre l'anglais, le français et l'allemand en utilisant les boutons ci-dessus."
+},
+  "title-client": "Bienvenue Mes Clients",
+  "description-client": {
+    "part1": "Pour commencer, modifiez <1>src/App.js</1> et enregistrez pour recharger.",
+    "part2": "Changez de langue entre l'anglais, le français et l'allemand en utilisant les boutons ci-dessus."
+  },
+  "title-produits": "Page Produits",
+  "description-produits": {
+    "part1": "Pour commencer, modifiez <1>src/App.js</1> et enregistrez pour recharger.",
+    "part2": "Changez de langue entre l'anglais, le français et l'allemand en utilisant les boutons ci-dessus."
+  }
+}
