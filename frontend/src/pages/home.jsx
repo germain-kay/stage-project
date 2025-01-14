@@ -2,35 +2,12 @@ import React, { Suspense } from 'react';
 import { useTranslation, Trans } from 'react-i18next';
 
 
-const lngs = {
-    en: { nativeName: 'English' },
-    de: { nativeName: 'Deutsch' },
-    fr: { nativeName: 'Français' },
-};
-
 function Page() {
-    const {t, i18n} = useTranslation();
-
+    const {t} = useTranslation();
 
     return (
-        <div className="App">
-            <header className="App-header">
-                <h4 className="App-title">
-                    <Trans i18nKey="title">
-                    </Trans>
-                </h4>
-                <div>
-                    {Object.keys(lngs).map((lng) => (
-                        <button key={lng} style={{fontWeight: i18n.language === lng ? 'bold' : 'normal'}} type="submit"
-                                onClick={() => {
-                                    i18n.changeLanguage(lng);
-                                }}>
-                            {lngs[lng].nativeName}
-                        </button>
-                    ))}
-                </div>
-                <p>
-                </p>
+        <main className="bg-white shadow">
+            <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8  text-gray-900">
                 <p>
                     <Trans i18nKey="description.part1">
                         Edit <code>src/App.js</code> and save to reload.
@@ -44,8 +21,8 @@ function Page() {
                 >
                     {t('description.part2')}
                 </a>
-            </header>
-        </div>
+            </div>
+        </main>
     );
 }
 
