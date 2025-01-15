@@ -1,4 +1,14 @@
 {
+  "nav-title": {
+    "home": "Startseite",
+    "customer": "Kunde",
+    "products": "Produkte"
+  },
+  "usernav-title": {
+    "profile": "Profil",
+    "settings": "Einstellungen",
+    "sign-out": "Abmelden"
+  },
   "title": "Willkommen auf der Testseite",
   "description": {
     "part1": "Um loszulegen, ändere <1>src/App(DE).js</1> und speichere um neuzuladen.",

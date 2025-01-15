@@ -1,4 +1,14 @@
 {
+  "nav-title": {
+    "home": "Home",
+    "customer": "Customers",
+    "products": "Products"
+  },
+  "usernav-title": {
+    "profile": "Profile",
+    "settings": "Parameters",
+    "sign-out": "Disconnect"
+  },
   "title": "Welcome to the Test Site",
   "description": {
     "part1": "To get started, edit <1>src/App.js</1> and save to reload.",

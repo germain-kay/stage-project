@@ -1,4 +1,15 @@
 {
+  "nav-title": {
+    "home": "Accueil",
+    "customer": "Clients",
+    "products": "Produits"
+  },
+  "usernav-title": {
+    "profile": "Profil",
+    "settings": "Paramètres",
+    "sign-out": "Déconnection"
+  },
+
   "title": "Bienvenue dans le Site Test",
   "description": {
     "part1": "Pour commencer, modifiez <1>src/App.js</1> et enregistrez pour recharger.",
