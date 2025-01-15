@@ -2,6 +2,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuIt
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import React from 'react';
 
+
 const user = {
     name: 'Tom Cook',
     email: 'tom@example.com',
@@ -11,6 +12,7 @@ const user = {
 const navigation = [
     { name: 'Accueil', href: '/', current: true },
     { name: 'Clients', href: '/clients', current: false },
+    { name: 'Produits', href: '/products', current: false },
 ];
 
 const userNavigation = [
@@ -123,7 +125,7 @@ const MobileMenu = () => (
     </DisclosurePanel>
 );
 
-export function Navbar() {
+export default function Navbar() {
     return (
         <div className="min-mh-full">
             <Disclosure as="nav" className="bg-gray-800">
