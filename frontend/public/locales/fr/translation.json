@@ -10,7 +10,11 @@
     "sign-out": "Déconnection"
   },
 
-  "title": "Bienvenue dans le Site Test",
+  "header-title": {
+    "home": "Bienvenue dans le Site Test",
+    "customer": "Bienvenue dans la section Clients",
+    "products": "Bienvenue dans la section Produits"
+  },
   "description": {
       "part1": "Pour commencer, modifiez <1>src/App.js</1> et enregistrez pour recharger.",
       "part2": "Changez de langue entre l'anglais, le français et l'allemand en utilisant les boutons ci-dessus."

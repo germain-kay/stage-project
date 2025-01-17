@@ -9,9 +9,15 @@
     "settings": "Einstellungen",
     "sign-out": "Abmelden"
   },
-  "title": "Willkommen auf der Testseite",
+
+  "header-title": {
+    "home": "Willkommen auf der Testseite",
+    "customer": "Willkommen im Bereich Kunden",
+    "products": "Willkommen im Bereich Produkte"
+  },
+
   "description": {
-    "part1": "Um loszulegen, ändere <1>src/App(DE).js</1> und speichere um neuzuladen.",
+    "part1": "Um loszulegen, ändere <1>src/App.js</1> und speichere um neuzuladen.",
     "part2": "Wechseln Sie die Sprache zwischen Englisch, Französisch und Deutsch, indem Sie die Schaltflächen oben verwenden."
   },
   "title-client": "Willkommen Meine Kunden",

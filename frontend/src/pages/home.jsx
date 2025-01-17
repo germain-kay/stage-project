@@ -3,7 +3,7 @@ import { useTranslation, Trans } from 'react-i18next';
 
 
 function Page() {
-    const {t} = useTranslation();
+    const {t    } = useTranslation();
 
     return (
         <main className="bg-white shadow">

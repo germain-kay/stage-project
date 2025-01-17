@@ -9,7 +9,13 @@
     "settings": "Parameters",
     "sign-out": "Disconnect"
   },
-  "title": "Welcome to the Test Site",
+
+  "header-title": {
+    "home": "Welcome to the Test Site",
+    "customer": "Welcome to the Customers section",
+    "products": "Welcome to the Products section"
+  },
+
   "description": {
     "part1": "To get started, edit <1>src/App.js</1> and save to reload.",
     "part2": "Switch language between english, french and german using buttons above."
