@@ -1,8 +1,6 @@
 import React from 'react';
 import i18n from 'i18next';
 
-
-
 const lngs = {
     en: { nativeName: 'English' },
     de: { nativeName: 'Deutsch' },
@@ -25,15 +23,7 @@ const Footer = () => {
                     </button>
                 ))}
             </div>
-            <span className="block text-sm text-center text-gray-500">
-                Built with
-                <a href="https://flowbite.com"
-                   className="text-purple-600 hover:underline"> React Router
-                </a> and
-                <a
-                    href="https://tailwindcss.com" className="text-purple-600 hover:underline"> TailwindCSS
-                </a>.
-            </span>
+
         </footer>
     )
 
