@@ -6,6 +6,7 @@ import {Home} from "./pages/home.jsx";
 import {Clients} from "./pages/clients.jsx";
 import {Layout} from "./components/Layout.jsx";
 import {Produits} from "./pages/products.jsx";
+import {Profile} from "./pages/profile.jsx";
 
 
 
@@ -19,6 +20,7 @@ const App = () => {
                     <Route path="/" element={<Home/>}/>
                     <Route path="/clients" element={<Clients/>}  />
                     <Route path="/products" element={<Produits/>}  />
+                    <Route path="/profile" element={<Profile/>}  />
                 </Route>
             </Routes>
           </I18nextProvider>
