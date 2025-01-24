@@ -1,5 +1,5 @@
 import React, {Suspense, useState} from 'react';
-import { useTranslation, Trans } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 import {ArrowBendRightDown, MagnifyingGlass } from "@phosphor-icons/react";
 
 

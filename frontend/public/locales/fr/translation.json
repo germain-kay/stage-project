@@ -68,8 +68,7 @@
     "push-notifications": "Identique au courrier électronique",
     "push-nothing": "Pas de notifications push",
     "button-cancel": "Annuler",
-    "button-save": "Sauvegarder",
-
+    "button-save": "Sauvegarder"
   }
 
 }

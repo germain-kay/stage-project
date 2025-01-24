@@ -1,4 +1,4 @@
-import { CaretDown, Image, UserCircle, Check } from '@phosphor-icons/react'
+import { CaretDown, Image, UserCircle } from '@phosphor-icons/react'
 import React, {Suspense} from "react";
 import { useTranslation } from 'react-i18next';
 
