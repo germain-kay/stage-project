@@ -13,7 +13,8 @@
   "header-title": {
     "home": "Willkommen auf der Testseite",
     "customer": "Willkommen im Bereich Kunden",
-    "products": "Willkommen im Bereich Produkte"
+    "products": "Willkommen im Bereich Produkte",
+    "profile": "Profile"
   },
 
   "description": {
@@ -29,5 +30,46 @@
   "description-produits": {
     "part1": "Um loszulegen, ändere <1>src/App(DE).js</1> und speichere um neuzuladen.",
     "part2": "Wechseln Sie die Sprache zwischen Englisch, Französisch und Deutsch, indem Sie die Schaltflächen oben verwenden."
+  },
+  "profile": {
+    "title":"Profil",
+    "title-description": "Diese Informationen werden öffentlich angezeigt, seien Sie also vorsichtig, was Sie weitergeben.",
+    "username": "Benutzername",
+    "username-input":"workcation.com/",
+    "about": "Über",
+    "about-description": "Schreiben Sie ein paar Sätze über sich selbst.",
+    "photo": "Foto",
+    "photo-change": "Ändern Sie",
+    "cover-photo": "Titelbild",
+    "c-photo-upload":"Eine Datei hochladen",
+    "c-photo-drap": "oder ziehen und ablegen",
+    "c-photo-PNG": "PNG, JPG, GIF bis zu 10 MB",
+    "personal": "Persönliche Informationen",
+    "personal-description":"Verwenden Sie eine ständige Adresse, an der Sie Post empfangen können.",
+    "personal-first-name": "Vornamen",
+    "personal-last-name": "Nachname",
+    "personal-email": "E-Mail Adresse",
+    "personal-country": "Land",
+    "personal-street-address": "Straße und Hausnummer",
+    "personal-city": "Stadt",
+    "personal-state": "Staat/Provinz",
+      "personal-zip": "ZIP/Postleitzahl",
+    "title-notification": "Benachrichtigungen",
+    "description-notification": "Wir werden Sie immer über wichtige Änderungen informieren, aber Sie entscheiden, was Sie sonst noch hören wollen.",
+    "title-email": "Per E-Mail",
+    "title-comment": "Kommentare",
+    "description-comment": "Lassen Sie sich benachrichtigen, wenn jemand einen Kommentar zu einem Beitrag abgibt.",
+    "title-candidate": "Kandidatinnen und Kandidaten",
+    "description-candidates":"Lassen Sie sich benachrichtigen, wenn sich ein Bewerber auf eine Stelle bewirbt.",
+    "title-offer": "Angebote",
+    "description-offer": "Lassen Sie sich benachrichtigen, wenn ein Bewerber ein Angebot annimmt oder ablehnt.",
+    "title-push": "Push Benachrichtigungen",
+    "description-push": "Diese werden per SMS an Ihr Mobiltelefon gesendet.",
+      "push-everything": "Alles",
+    "push-notifications": "Wie bei E-Mail",
+    "push-nothing": "Keine Push-Benachrichtigungen",
+    "button-cancel": "Abbrechen",
+    "button-save": "Speichern Sie"
   }
+
 }

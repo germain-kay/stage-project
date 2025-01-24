@@ -135,6 +135,7 @@ export default function NaviBar (){
                                 key={lng} type="submit"
                                 onClick={() => {
                                   i18n.changeLanguage(lng);
+                                  setMenuGlobeOpen(false);
                                 }}>
                               {lngs[lng].nativeName}
                             </button>

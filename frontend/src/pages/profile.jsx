@@ -1,4 +1,4 @@
-import { CaretDown, Image, UserCircle } from '@phosphor-icons/react'
+import { CaretDown, Image, UserCircle, Check } from '@phosphor-icons/react'
 import React, {Suspense} from "react";
 import { useTranslation } from 'react-i18next';
 
@@ -19,27 +19,27 @@ function Page() {
                 <form className="max-w-md mx-auto py-5">
                     <div className="space-y-12">
                         <div className="border-b border-gray-900/10 pb-12">
-                            <h2 className="text-base/7 font-semibold text-gray-900">Profile</h2>
+                            <h2 className="text-base/7 font-semibold text-gray-900">{t('profile.title')}</h2>
                             <p className="mt-1 text-sm/6 text-gray-600">
-                                This information will be displayed publicly so be careful what you share.
+                                {t('profile.title-description')}
                             </p>
 
                             <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                                 <div className="sm:col-span-4">
                                     <label htmlFor="username" className="block text-sm/6 font-medium text-gray-900">
-                                        Username
+                                        {t('profile.username')}
                                     </label>
                                     <div className="mt-2">
                                         <div
                                             className="flex items-center rounded-md bg-white pl-3 outline outline-1 -outline-offset-1 outline-gray-300 focus-within:outline focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-indigo-600">
                                             <div
-                                                className="shrink-0 select-none text-base text-gray-500 sm:text-sm/6">workcation.com/
+                                                className="shrink-0 select-none text-base text-gray-500 sm:text-sm/6">
                                             </div>
                                             <input
                                                 id="username"
                                                 name="username"
                                                 type="text"
-                                                placeholder="janesmith"
+                                                placeholder="Jane Smith"
                                                 className="block min-w-0 grow py-1.5 pl-1 pr-3 text-base text-gray-900 placeholder:text-gray-400 focus:outline focus:outline-0 sm:text-sm/6"
                                             />
                                         </div>
@@ -48,7 +48,7 @@ function Page() {
 
                                 <div className="col-span-full">
                                     <label htmlFor="about" className="block text-sm/6 font-medium text-gray-900">
-                                        About
+                                        {t('profile.about')}
                                     </label>
                                     <div className="mt-2">
                     <textarea
@@ -59,8 +59,7 @@ function Page() {
                         defaultValue={''}
                     />
                                     </div>
-                                    <p className="mt-3 text-sm/6 text-gray-600">Write a few sentences about
-                                        yourself.</p>
+                                    <p className="mt-3 text-sm/6 text-gray-600">{t('profile.about-description')}</p>
                                 </div>
 
                                 <div className="col-span-full">
@@ -73,14 +72,14 @@ function Page() {
                                             type="button"
                                             className="rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
                                         >
-                                            Change
+                                            {t('profile.photo-change')}
                                         </button>
                                     </div>
                                 </div>
 
                                 <div className="col-span-full">
                                     <label htmlFor="cover-photo" className="block text-sm/6 font-medium text-gray-900">
-                                        Cover photo
+                                        {t('profile.cover-photo')}
                                     </label>
                                     <div
                                         className="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
@@ -91,13 +90,13 @@ function Page() {
                                                     htmlFor="file-upload"
                                                     className="relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500"
                                                 >
-                                                    <span>Upload a file</span>
+                                                    <span>{t('profile.c-photo-upload')}</span>
                                                     <input id="file-upload" name="file-upload" type="file"
                                                            className="sr-only"/>
                                                 </label>
-                                                <p className="pl-1">or drag and drop</p>
+                                                <p className="pl-1">{t('profile.c-photo-drap')}</p>
                                             </div>
-                                            <p className="text-xs/5 text-gray-600">PNG, JPG, GIF up to 10MB</p>
+                                            <p className="text-xs/5 text-gray-600">{t('profile.c-photo-PNG')}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -105,14 +104,12 @@ function Page() {
                         </div>
 
                         <div className="border-b border-gray-900/10 pb-12">
-                            <h2 className="text-base/7 font-semibold text-gray-900">Personal Information</h2>
-                            <p className="mt-1 text-sm/6 text-gray-600">Use a permanent address where you can receive
-                                mail.</p>
-
+                            <h2 className="text-base/7 font-semibold text-gray-900">{t('profile.personal')}</h2>
+                            <p className="mt-1 text-sm/6 text-gray-600">{t('profile.personal-description')}</p>
                             <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                                 <div className="sm:col-span-3">
                                     <label htmlFor="first-name" className="block text-sm/6 font-medium text-gray-900">
-                                        First name
+                                        {t('profile.personal-first-name')}
                                     </label>
                                     <div className="mt-2">
                                         <input
@@ -127,7 +124,7 @@ function Page() {
 
                                 <div className="sm:col-span-3">
                                     <label htmlFor="last-name" className="block text-sm/6 font-medium text-gray-900">
-                                        Last name
+                                        {t('profile.personal-last-name')}
                                     </label>
                                     <div className="mt-2">
                                         <input
@@ -142,7 +139,7 @@ function Page() {
 
                                 <div className="sm:col-span-4">
                                     <label htmlFor="email" className="block text-sm/6 font-medium text-gray-900">
-                                        Email address
+                                        {t('profile.personal-email')}
                                     </label>
                                     <div className="mt-2">
                                         <input
@@ -157,7 +154,7 @@ function Page() {
 
                                 <div className="sm:col-span-3">
                                     <label htmlFor="country" className="block text-sm/6 font-medium text-gray-900">
-                                        Country
+                                        {t('profile.personal-country')}
                                     </label>
                                     <div className="mt-2 grid grid-cols-1">
                                         <select
@@ -180,7 +177,7 @@ function Page() {
                                 <div className="col-span-full">
                                     <label htmlFor="street-address"
                                            className="block text-sm/6 font-medium text-gray-900">
-                                        Street address
+                                        {t('profile.personal-street-address')}
                                     </label>
                                     <div className="mt-2">
                                         <input
@@ -195,7 +192,7 @@ function Page() {
 
                                 <div className="sm:col-span-2 sm:col-start-1">
                                     <label htmlFor="city" className="block text-sm/6 font-medium text-gray-900">
-                                        City
+                                        {t('profile.personal-city')}
                                     </label>
                                     <div className="mt-2">
                                         <input
@@ -210,7 +207,7 @@ function Page() {
 
                                 <div className="sm:col-span-2">
                                     <label htmlFor="region" className="block text-sm/6 font-medium text-gray-900">
-                                        State / Province
+                                        {t('profile.personal-state')}
                                     </label>
                                     <div className="mt-2">
                                         <input
@@ -225,7 +222,7 @@ function Page() {
 
                                 <div className="sm:col-span-2">
                                     <label htmlFor="postal-code" className="block text-sm/6 font-medium text-gray-900">
-                                        ZIP / Postal code
+                                        {t('profile.personal-zip')}
                                     </label>
                                     <div className="mt-2">
                                         <input
@@ -241,16 +238,14 @@ function Page() {
                         </div>
 
                         <div className="border-b border-gray-900/10 pb-12">
-                            <h2 className="text-base/7 font-semibold text-gray-900">Notifications</h2>
+                            <h2 className="text-base/7 font-semibold text-gray-900">{t('profile.title-notification')}</h2>
                             <p className="mt-1 text-sm/6 text-gray-600">
-                                We'll always let you know about important changes, but you pick what else you want to
-                                hear
-                                about.
+                                {t('profile.title-notification')}
                             </p>
 
                             <div className="mt-10 space-y-10">
                                 <fieldset>
-                                    <legend className="text-sm/6 font-semibold text-gray-900">By email</legend>
+                                    <legend className="text-sm/6 font-semibold text-gray-900">{t('profile.title-email')}</legend>
                                     <div className="mt-6 space-y-6">
                                         <div className="flex gap-3">
                                             <div className="flex h-6 shrink-0 items-center">
@@ -287,10 +282,10 @@ function Page() {
                                             </div>
                                             <div className="text-sm/6">
                                                 <label htmlFor="comments" className="font-medium text-gray-900">
-                                                    Comments
+                                                    {t('profile.title-comment')}
                                                 </label>
                                                 <p id="comments-description" className="text-gray-500">
-                                                    Get notified when someones posts a comment on a posting.
+                                                    {t('profile.description-comment')}
                                                 </p>
                                             </div>
                                         </div>
@@ -328,10 +323,10 @@ function Page() {
                                             </div>
                                             <div className="text-sm/6">
                                                 <label htmlFor="candidates" className="font-medium text-gray-900">
-                                                    Candidates
+                                                    {t('profile.title-candidate')}
                                                 </label>
                                                 <p id="candidates-description" className="text-gray-500">
-                                                    Get notified when a candidate applies for a job.
+                                                    {t('profile.description-candidates')}
                                                 </p>
                                             </div>
                                         </div>
@@ -369,10 +364,10 @@ function Page() {
                                             </div>
                                             <div className="text-sm/6">
                                                 <label htmlFor="offers" className="font-medium text-gray-900">
-                                                    Offers
+                                                    {t('profile.title-offer')}
                                                 </label>
                                                 <p id="offers-description" className="text-gray-500">
-                                                    Get notified when a candidate accepts or rejects an offer.
+                                                    {t('profile.description-offer')}
                                                 </p>
                                             </div>
                                         </div>
@@ -380,11 +375,10 @@ function Page() {
                                 </fieldset>
 
                                 <fieldset>
-                                    <legend className="text-sm/6 font-semibold text-gray-900">Push notifications
+                                    <legend className="text-sm/6 font-semibold text-gray-900">{t('profile.title-push')}
                                     </legend>
-                                    <p className="mt-1 text-sm/6 text-gray-600">These are delivered via SMS to your
-                                        mobile
-                                        phone.</p>
+                                    <p className="mt-1 text-sm/6 text-gray-600">{t('profile.description-push')}
+                                    </p>
                                     <div className="mt-6 space-y-6">
                                         <div className="flex items-center gap-x-3">
                                             <input
@@ -396,7 +390,7 @@ function Page() {
                                             />
                                             <label htmlFor="push-everything"
                                                    className="block text-sm/6 font-medium text-gray-900">
-                                                Everything
+                                                {t('profile.push-everything')}
                                             </label>
                                         </div>
                                         <div className="flex items-center gap-x-3">
@@ -408,7 +402,7 @@ function Page() {
                                             />
                                             <label htmlFor="push-email"
                                                    className="block text-sm/6 font-medium text-gray-900">
-                                                Same as email
+                                                {t('profile.push-notifications')}
                                             </label>
                                         </div>
                                         <div className="flex items-center gap-x-3">
@@ -420,7 +414,7 @@ function Page() {
                                             />
                                             <label htmlFor="push-nothing"
                                                    className="block text-sm/6 font-medium text-gray-900">
-                                                No push notifications
+                                                {t('profile.push-nothing')}
                                             </label>
                                         </div>
                                     </div>
@@ -431,13 +425,13 @@ function Page() {
 
                     <div className="mt-6 flex items-center justify-end gap-x-6">
                         <button type="button" className="text-sm/6 font-semibold text-gray-900">
-                            Cancel
+                            {t('profile.button-cancel')}
                         </button>
                         <button
                             type="submit"
                             className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                         >
-                            Save
+                            {t('profile.button-save')}
                         </button>
                     </div>
                 </form>

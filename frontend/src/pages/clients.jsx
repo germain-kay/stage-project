@@ -1,5 +1,5 @@
 import React, {Suspense, useState} from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslation, Trans } from 'react-i18next';
 import {ArrowBendRightDown, MagnifyingGlass } from "@phosphor-icons/react";
 
 
@@ -10,7 +10,6 @@ function Page() {
 
     function onActionClick(){
         //Fait quelque chose quand je clic sur le Dropdown Menu
-        console.log("Clique Réussi");
         setMenuActionOpen(!menuActionOpen);
     }
 
@@ -27,8 +26,7 @@ function Page() {
             </header>
             <main className="bg-white shadow">
                     <div className="relative overflow-x-auto px-6 sm:rounded-lg">
-                        <div
-                            className="flex items-center justify-between flex-column md:flex-row space-y-4 md:space-y-0 pb-4 bg-white dark:bg-gray-900">
+                        <div className="flex items-center justify-between flex-column flex-wrap md:flex-row space-y-4 md:space-y-0 pb-4 bg-white dark:bg-gray-900">
                             <div>
                                 <button id="dropdownActionButton" data-dropdown-toggle="dropdownAction"
                                         className="inline-flex items-center text-gray-500 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-3 py-1.5 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
@@ -40,33 +38,31 @@ function Page() {
                                 </button>
                                 {/*Dropdown Menu*/}
                                 {menuActionOpen && (
-                                    <div className="z-10 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
-                                         role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabIndex="-1²">
-                                        <ul className="py-1 text-sm text-gray-700 dark:text-gray-200"
-                                            aria-labelledby="dropdownActionButton">
-                                            <li>
-                                                <a href="#"
-                                                   className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Reward</a>
-                                            </li>
-                                            <li>
-                                                <a href="#"
-                                                   className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Promote</a>
-                                            </li>
-                                            <li>
-                                                <a href="#"
-                                                   className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Activate
-                                                    account</a>
-                                            </li>
-                                        </ul>
-                                        <div className="py-1">
+                                    <div id="dropdownAction" className=" absolute z-10 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                                    <ul className="py-1 text-sm text-gray-700 dark:text-gray-200"
+                                        aria-labelledby="dropdownActionButton">
+                                        <li>
                                             <a href="#"
-                                               className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Delete
-                                                User</a>
-                                        </div>
-                                    </div>)}
+                                               className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Reward</a>
+                                        </li>
+                                        <li>
+                                            <a href="#"
+                                               className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Promote</a>
+                                        </li>
+                                        <li>
+                                            <a href="#"
+                                               className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Activate
+                                                account</a>
+                                        </li>
+                                    </ul>
+                                    <div className="py-1">
+                                        <a href="#"
+                                           className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Delete
+                                            User</a>
+                                    </div>
+                                </div>)}
+
                             </div>
-
-
                             <label htmlFor="table-search" className="sr-only">Search</label>
                             <div className="relative">
                                 <div
@@ -77,7 +73,6 @@ function Page() {
                                        className="block p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-80 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                        placeholder="Search for users"/>
                             </div>
-
                         </div>
                         <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                             <thead

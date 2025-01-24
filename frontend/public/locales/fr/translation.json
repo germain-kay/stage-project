@@ -13,7 +13,8 @@
   "header-title": {
     "home": "Bienvenue dans le Site Test",
     "customer": "Bienvenue dans la section Clients",
-    "products": "Bienvenue dans la section Produits"
+    "products": "Bienvenue dans la section Produits",
+    "profile": "Bienvenue dans votre profil"
   },
   "description": {
       "part1": "Pour commencer, modifiez <1>src/App.js</1> et enregistrez pour recharger.",
@@ -28,5 +29,47 @@
   "description-produits": {
       "part1": "Pour commencer, modifiez <1>src/App.js</1> et enregistrez pour recharger.",
       "part2": "Changez de langue entre l'anglais, le français et l'allemand en utilisant les boutons ci-dessus."
-    }
+    },
+  "profile": {
+    "title":"Profil",
+      "title-description": "Ces informations seront affichées publiquement, alors faites attention à ce que vous partagez.",
+    "username": "Nom d'utilisateur",
+    "username-input":"workcation.com/",
+    "about": "A propos de vous",
+    "about-description": "Rédigez quelques phrases sur vous-même.",
+    "photo": "Photo",
+    "photo-change": "Changer",
+    "cover-photo": "Photo de profil",
+    "c-photo-upload":"Charger un fichier",
+    "c-photo-drap": "ou par glisser-déposer",
+    "c-photo-PNG": "en PNG, JPG, GIF jusqu'à 10 Mo",
+    "personal": "Informations personnelles",
+    "personal-description":"Utilisez une adresse permanente où vous pouvez recevoir du courrier.",
+    "personal-first-name": "Prénom",
+    "personal-last-name": "Nom de famille",
+    "personal-email": "Adresse électronique",
+    "personal-country": "Pays",
+    "personal-street-address": "Adresse",
+    "personal-city": "Ville",
+    "personal-state": "Etat / Province",
+    "personal-zip": "Code postal",
+    "title-notification": "Notifications",
+    "description-notification": "Nous vous informerons toujours des changements importants, mais c'est vous qui choisissez les autres sujets dont vous voulez entendre parler.",
+    "title-email": "Par e-mail",
+    "title-comment": "Commentaires",
+    "description-comment": "Recevoir une notification lorsque quelqu'un publie un commentaire sur une publication.",
+    "title-candidate": "Candidats",
+    "description-candidates":"Recevoir une notification lorsqu'un candidat postule à un emploi.",
+    "title-offer": "Offres",
+    "description-offer": "Soyez informé lorsqu'un candidat accepte ou refuse une offre.",
+    "title-push": "Push notifications",
+    "description-push": "Elles sont envoyées par SMS sur votre téléphone portable.",
+    "push-everything": "Tout",
+    "push-notifications": "Identique au courrier électronique",
+    "push-nothing": "Pas de notifications push",
+    "button-cancel": "Annuler",
+    "button-save": "Sauvegarder",
+
+  }
+
 }

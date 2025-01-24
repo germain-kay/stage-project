@@ -13,7 +13,8 @@
   "header-title": {
     "home": "Welcome to the Test Site",
     "customer": "Welcome to the Customers section",
-    "products": "Welcome to the Products section"
+    "products": "Welcome to the Products section",
+    "profile": "Welcome to your Profile"
   },
 
   "description": {
@@ -29,5 +30,46 @@
   "description-produits": {
     "part1": "To get started, edit <1>src/App.js</1> and save to reload.",
     "part2": "Switch language between english, french and german using buttons above."
+  },
+  "profile": {
+    "title":"Profile",
+    "title-description": "This information will be displayed publicly so be careful what you share.",
+    "username": "Username",
+    "username-input":"workcation.com/",
+    "about": "About",
+    "about-description": "Write a few sentences about yourself.",
+    "photo": "Photo",
+    "photo-change": "Change",
+    "cover-photo": "Cover photo",
+    "c-photo-upload":"Upload a file",
+    "c-photo-drap": "or drag and drop",
+    "c-photo-PNG": "PNG, JPG, GIF up to 10MB",
+    "personal": "Personal Information",
+    "personal-description":"Use a permanent address where you can receive mail.",
+    "personal-first-name": "First name",
+    "personal-last-name": "Last name",
+    "personal-email": "Email address",
+    "personal-country": "Country",
+    "personal-street-address": "Street address",
+    "personal-city": "City",
+    "personal-state": "State / Province",
+    "personal-zip": "ZIP / Postal code",
+    "title-notification": "Notifications",
+    "description-notification": "We'll always let you know about important changes, but you pick what else you want to hear about.",
+    "title-email": "By email",
+    "title-comment": "Comments",
+    "description-comment": "Get notified when someones posts a comment on a posting.",
+    "title-candidate": "Candidates",
+    "description-candidates":"Get notified when a candidate applies for a job.",
+    "title-offer": "Offers",
+    "description-offer": "Get notified when a candidate accepts or rejects an offer.",
+    "title-push": "Push notifications",
+    "description-push": "These are delivered via SMS to your mobile phone.",
+    "push-everything": "Everything",
+    "push-notifications": "Same as email",
+    "push-nothing": "No push notifications",
+    "button-cancel": "Cancel",
+    "button-save": "Save"
   }
+
 }
