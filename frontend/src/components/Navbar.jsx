@@ -78,20 +78,24 @@ const ProfileMenu = () => (
 const MobileMenu = () => (
     <DisclosurePanel className="md:hidden">
         <div className="space-y-1 px-2 pb-3 pt-2 sm:px-3">
-            {navigation.map((item) => (
-                <DisclosureButton
-                    key={item.name}
-                    as="a"
-                    href={item.href}
-                    aria-current={item.current ? 'page' : undefined}
-                    className={combineClassNames(
-                        item.current ? activeNavLinkClasses : inactiveNavLinkClasses,
-                        'block rounded-md px-3 py-2 text-base font-medium'
-                    )}
-                >
-                    {item.name}
-                </DisclosureButton>
-            ))}
+            {navigation.map((item) => {
+                const toto = item.name;
+                console.log("LIST ", item);
+
+                return (
+                    <DisclosureButton
+                        key={item.name}
+                        as="a"
+                        href={item.href}
+                        aria-current={item.current ? 'page' : undefined}
+                        className={combineClassNames(
+                            item.current ? activeNavLinkClasses : inactiveNavLinkClasses,
+                            'block rounded-md px-3 py-2 text-base font-medium'
+                        )}
+                    >
+                        {item.name}
+                    </DisclosureButton>
+            );})}
         </div>
         <div className="border-t border-gray-700 pb-3 pt-4">
             <div className="flex items-center px-5">

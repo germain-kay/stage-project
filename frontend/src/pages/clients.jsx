@@ -2,10 +2,13 @@ import React, {Suspense, useState} from 'react';
 import { useTranslation } from 'react-i18next';
 import {ArrowBendRightDown, MagnifyingGlass } from "@phosphor-icons/react";
 
+import UserEditModal from '../components/modals/useredit';
+import { CLIENTS_LIST } from '../utils/samples';
 
 function Page() {
     const {t} = useTranslation();
     const [menuActionOpen, setMenuActionOpen] = useState(false);
+    const [openUserEditMoal, setOpenUserEditModal] = useState(false);
 
 
     function onActionClick(){
@@ -127,8 +130,12 @@ function Page() {
                                     </div>
                                 </td>
                                 <td className="px-6 py-4">
-                                    <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit
-                                        user</a>
+                                    <button 
+                                        type="button" 
+                                        onClick={() => (setOpenUserEditModal(true))}
+                                        className="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+                                        Edit user
+                                    </button>
                                 </td>
                             </tr>
                             <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
@@ -258,6 +265,7 @@ function Page() {
                             </tbody>
                         </table>
                     </div>
+                    {openUserEditMoal && <UserEditModal setOpenUserEditModal={setOpenUserEditModal}/>}
             </main>
         </div>
 
