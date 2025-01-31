@@ -7,6 +7,7 @@ import {Clients} from "./pages/clients.jsx";
 import {Layout} from "./components/Layout.jsx";
 import {Produits} from "./pages/products.jsx";
 import {Profile} from "./pages/profile.jsx";
+import {Login} from "./pages/login.jsx";
 
 
 
@@ -17,7 +18,8 @@ const App = () => {
           <I18nextProvider i18n={i18n}>
             <Routes>
                 <Route element={<Layout/>}>
-                    <Route path="/" element={<Home/>}/>
+                    <Route path="/" element={<Login/>}/>
+                    <Route path="/home" element={<Home/>}/>
                     <Route path="/clients" element={<Clients/>}  />
                     <Route path="/products" element={<Produits/>}  />
                     <Route path="/profile" element={<Profile/>}  />

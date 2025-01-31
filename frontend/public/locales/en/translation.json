@@ -70,6 +70,14 @@
     "push-nothing": "No push notifications",
     "button-cancel": "Cancel",
     "button-save": "Save"
-  }
+  },
+  "login": {
+    "title": "Sign in to your account",
+    "email": "Email address",
+    "password": "Password",
+    "forgot-pass": "Forgot password ?",
+    "sign-in": "Sign in"
+
+}
 
 }

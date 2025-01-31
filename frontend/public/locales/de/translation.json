@@ -70,6 +70,15 @@
     "push-nothing": "Keine Push-Benachrichtigungen",
     "button-cancel": "Abbrechen",
     "button-save": "Speichern Sie"
+  },
+
+  "login": {
+    "title": "Bei Ihrem Konto anmelden",
+    "email": "E-Mail-Anschrift",
+    "password": "Passwort",
+    "forgot-pass": "Passwort vergessen ?",
+    "sign-in": "Eintragen"
+
   }
 
 }

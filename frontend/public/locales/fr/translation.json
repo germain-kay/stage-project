@@ -69,6 +69,15 @@
     "push-nothing": "Pas de notifications push",
     "button-cancel": "Annuler",
     "button-save": "Sauvegarder"
+  },
+
+  "login": {
+    "title": "Connectez-vous à votre compte",
+    "email": "Adresse e-mail",
+    "password": "Mot de passe",
+    "forgot-pass": "Mot de passe oublié ?",
+    "sign-in": "Se connecter"
+
   }
 
 }
