@@ -1,7 +1,23 @@
-
+// import {faker} from "@faker-js/faker/locale/en_US";
+// import {promises as fs} from "fs";
+//
+//  const createFakeClients =() =>({
+//      id: faker.string.uuid(),
+//      prenom: faker.name.firstName(),
+//      nom: faker.name.lastName(),
+//      email: faker.internet.email(),
+//      avatar: faker.image.avatar(),
+//      metier:faker.person.jobType(),
+//      registeredAt: faker.date.past(),
+// });
+//
+// const clients = Array.from({length:10}).map(createFakeClients);
+//
+// fs.writeFile("./clients.json", JSON.stringify(clients, null, 2), 'utf8')
 
 export const CLIENTS_LIST = [
     {
+        "id": "1",
         "nom": "Dupont",
         "prenom": "Jean",
         "email": "jean.dupont@example.com",
@@ -10,6 +26,7 @@ export const CLIENTS_LIST = [
         "status": "active"
     },
     {
+        "id": "2",
         "nom": "Doe",
         "prenom": "Jane",
         "email": "jane.doe@example.com",
@@ -18,6 +35,7 @@ export const CLIENTS_LIST = [
         "status": "suspended"
     },
     {
+        "id": "3",
         "nom": "Nguyen",
         "prenom": "Linh",
         "email": "linh.nguyen@example.com",
@@ -26,6 +44,7 @@ export const CLIENTS_LIST = [
         "status": "active"
     },
     {
+        "id": "4",
         "nom": "Smith",
         "prenom": "John",
         "email": "john.smith@example.com",
@@ -34,6 +53,7 @@ export const CLIENTS_LIST = [
         "status": "archived"
     },
     {
+        "id": "5",
         "nom": "Traoré",
         "prenom": "Aïssata",
         "email": "aissata.traore@example.com",
@@ -42,6 +62,7 @@ export const CLIENTS_LIST = [
         "status": "active"
     },
     {
+        "id": "6",
         "nom": "Lopez",
         "prenom": "Carlos",
         "email": "carlos.lopez@example.com",
@@ -107,4 +128,3 @@ export const PRODUITS_LIST = [
         "notation": 5
     }
 ];
-      
