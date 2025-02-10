@@ -2,11 +2,11 @@ import {faker} from "@faker-js/faker/locale/en_US";
 
  const createFakeClients =() =>({
      id: faker.string.uuid(),
-     prenom: faker.person.firstName(),
-     nom: faker.person.lastName(),
+     firstName: faker.person.firstName(),
+     lastName: faker.person.lastName(),
      email: faker.internet.email(),
      avatar: faker.image.avatar(),
-     metier:faker.person.jobType(),
+     job:faker.person.jobType(),
      number:faker.phone.number({style: 'international'}),
 
 });

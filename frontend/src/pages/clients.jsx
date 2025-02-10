@@ -125,12 +125,12 @@ function Page() {
                                           src={client.avatar}
                                           alt="Jese image"/>}
                                     <div className="ps-3">
-                                        <div className="text-base font-semibold">{client.nom} {client.prenom}</div>
+                                        <div className="text-base font-semibold">{client.lastName} {client.firstName}</div>
                                         <div className="font-normal text-gray-500">{client.email}</div>
                                     </div>
                                 </th>
                                 <td className="px-6 py-4">
-                                    {client.metier}
+                                    {client.job}
                                 </td>
                                 <td className="px-6 py-4">
                                     <div className="flex items-center">

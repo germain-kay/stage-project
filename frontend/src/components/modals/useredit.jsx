@@ -1,18 +1,20 @@
 import React, {useState} from 'react';
 
 export default function UserEditModal ({ client, setOpenUserEditModal, updateClient }){
-    const [firstName, setFirstName] = useState(client.prenom);
-    const [lastName, setLastName] = useState(client.nom);
+    const [firstName, setFirstName] = useState(client.firstName);
+    const [lastName, setLastName] = useState(client.lastName);
     const [email, setEmail] = useState(client.email);
-    const [city, setCity] = useState(client.city || '');
+    const [job, setJob] = useState(client.job);
+    const [number, setNumber] = useState(client.number || '');
 
     function handleSave() {
         const updatedClient = {
             ...client,
-            prenom: firstName,
-            nom: lastName,
+            firstName: firstName,
+            lastName: lastName,
             email: email,
-            city: city
+            job: job,
+            number: number
         };
         updateClient(updatedClient);
         setOpenUserEditModal(false);
@@ -70,7 +72,6 @@ export default function UserEditModal ({ client, setOpenUserEditModal, updateCli
                                                         />
                                                     </div>
                                                 </div>
-
                                                 <div className="sm:col-span-4">
                                                     <label htmlFor="email" className="block text-sm/6 font-medium text-gray-900">
                                                         Email address
@@ -86,19 +87,34 @@ export default function UserEditModal ({ client, setOpenUserEditModal, updateCli
                                                             className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                                                         />
                                                     </div>
-                                                </div>
-                                                <div className="sm:col-span-2 sm:col-start-1">
-                                                    <label htmlFor="city" className="block text-sm/6 font-medium text-gray-900">
-                                                        City
+                                                </div> <div className="sm:col-span-4">
+                                                    <label htmlFor="job" className="block text-sm/6 font-medium text-gray-900">
+                                                        Job Name
                                                     </label>
                                                     <div className="mt-2">
                                                         <input
-                                                            id="city"
-                                                            name="city"
+                                                            id="job"
+                                                            name="job"
+                                                            type="job"
+                                                            autoComplete="job"
+                                                            value={job}
+                                                            onChange={(e) => setJob(e.target.value)}
+                                                            className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                                                        />
+                                                    </div>
+                                                </div>
+                                                <div className="sm:col-span-2 sm:col-start-1">
+                                                    <label htmlFor="number" className="block text-sm/6 font-medium text-gray-900">
+                                                        number
+                                                    </label>
+                                                    <div className="mt-3">
+                                                        <input
+                                                            id="number"
+                                                            name="number"
                                                             type="text"
                                                             autoComplete="address-level2"
-                                                            value={city}
-                                                            onChange={(e) => setCity(e.target.value)}
+                                                            value={number}
+                                                            onChange={(e) => setNumber(e.target.value)}
                                                             className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                                                         />
                                                     </div>
