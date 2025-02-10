@@ -1,76 +1,18 @@
-// import {faker} from "@faker-js/faker/locale/en_US";
-// import {promises as fs} from "fs";
-//
-//  const createFakeClients =() =>({
-//      id: faker.string.uuid(),
-//      prenom: faker.name.firstName(),
-//      nom: faker.name.lastName(),
-//      email: faker.internet.email(),
-//      avatar: faker.image.avatar(),
-//      metier:faker.person.jobType(),
-//      registeredAt: faker.date.past(),
-// });
-//
-// const clients = Array.from({length:10}).map(createFakeClients);
-//
-// fs.writeFile("./clients.json", JSON.stringify(clients, null, 2), 'utf8')
+import {faker} from "@faker-js/faker/locale/en_US";
 
-export const CLIENTS_LIST = [
-    {
-        "id": "1",
-        "nom": "Dupont",
-        "prenom": "Jean",
-        "email": "jean.dupont@example.com",
-        "telephone": "+33 6 12 34 56 78",
-        "metier": "Développeur Web",
-        "status": "active"
-    },
-    {
-        "id": "2",
-        "nom": "Doe",
-        "prenom": "Jane",
-        "email": "jane.doe@example.com",
-        "telephone": "+33 6 98 76 54 32",
-        "metier": "Consultant IT",
-        "status": "suspended"
-    },
-    {
-        "id": "3",
-        "nom": "Nguyen",
-        "prenom": "Linh",
-        "email": "linh.nguyen@example.com",
-        "telephone": "+33 6 22 33 44 55",
-        "metier": "Designer UI/UX",
-        "status": "active"
-    },
-    {
-        "id": "4",
-        "nom": "Smith",
-        "prenom": "John",
-        "email": "john.smith@example.com",
-        "telephone": "+33 6 77 88 99 00",
-        "metier": "Chef de projet",
-        "status": "archived"
-    },
-    {
-        "id": "5",
-        "nom": "Traoré",
-        "prenom": "Aïssata",
-        "email": "aissata.traore@example.com",
-        "telephone": "+33 6 55 44 33 22",
-        "metier": "Data Analyst",
-        "status": "active"
-    },
-    {
-        "id": "6",
-        "nom": "Lopez",
-        "prenom": "Carlos",
-        "email": "carlos.lopez@example.com",
-        "telephone": "+33 6 66 77 88 99",
-        "metier": "Développeur Mobile",
-        "status": "suspended"
-    }
-];
+ const createFakeClients =() =>({
+     id: faker.string.uuid(),
+     prenom: faker.person.firstName(),
+     nom: faker.person.lastName(),
+     email: faker.internet.email(),
+     avatar: faker.image.avatar(),
+     metier:faker.person.jobType(),
+     number:faker.phone.number({style: 'international'}),
+
+});
+
+export const CLIENTS_LIST = Array.from({length:10}).map(createFakeClients);
+
 
 export const PRODUITS_LIST = [
     {
