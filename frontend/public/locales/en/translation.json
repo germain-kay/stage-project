@@ -4,6 +4,7 @@
     "customer": "Customers",
     "products": "Products"
   },
+
   "usernav-title": {
     "profile": "Profile",
     "settings": "Parameters",
@@ -31,6 +32,7 @@
     "part1": "To get started, edit <1>src/App.js</1> and save to reload.",
     "part2": "Switch language between english, french and german using buttons above."
   },
+
   "profile": {
     "title":"Profile",
     "title-description": "This information will be displayed publicly so be careful what you share.",
@@ -71,6 +73,7 @@
     "button-cancel": "Cancel",
     "button-save": "Save"
   },
+
   "login": {
     "title": "Sign in to your account",
     "email": "Email address",
@@ -78,6 +81,34 @@
     "forgot-pass": "Forgot password ?",
     "sign-in": "Sign in"
 
-}
+},
+  "customers": {
+    "title":"Welcome My Customers",
+    "search": "Search for users",
+    "name": "Name",
+    "searchPlacerholder": "Search for a customer",
+    "jobTitle": "Job Title",
+    "number": "Number",
+    "editUser": "Edit User",
+    "actionTable": "Action"
+  },
 
+  "customersActions": {
+      "title": "Actions",
+      "reward": "Reward",
+      "promote": "Promote",
+      "activateUser": "Activate User",
+      "deleteUser": "Delete User"
+  },
+  "modalUser": {
+    "title": "Edit User",
+    "description": "Are you sure you want to modify this account ? All your data will be permanently deleted.\nThis action cannot be undone.",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "jobTitle": "Job Title",
+    "phone": "Number",
+    "email": "Email",
+    "save": "Save",
+    "cancel": "Cancel"
+  }
 }

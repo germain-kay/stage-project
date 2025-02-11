@@ -79,6 +79,34 @@
     "forgot-pass": "Passwort vergessen ?",
     "sign-in": "Eintragen"
 
+  },
+  "customers": {
+    "title": "Kunden",
+    "search": "Suche",
+    "name": "Name",
+    "searchPlacerholder": "Suche nach einem Kunden",
+    "jobTitle": "Berufsbezeichnung",
+    "number": "Nummer",
+    "editUser": "Benutzer bearbeiten",
+    "actionTable": "Aktion"
+  },
+  "customersActions": {
+    "title": "Aktionen",
+    "reward": "Belohnung",
+    "promote": "Fördern",
+    "activateUser": "Benutzer aktivieren",
+    "deleteUser": "Benutzer löschen"
+  },
+  "modalUser": {
+    "title": "Benutzer bearbeiten",
+    "description": "Sind Sie sicher, dass Sie dieses Konto ändern möchten ? Alle Ihre Daten werden endgültig gelöscht.\nDiese Aktion kann nicht rückgängig gemacht werden.",
+    "firstName": "Vorname",
+    "lastName": "Nachname",
+    "jobTitle": "Berufsbezeichnung",
+    "phone": "Nummer",
+    "email": "E-Mail",
+    "save": "Speichern",
+    "cancel": "Stornieren"
   }
 
 }

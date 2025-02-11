@@ -1,6 +1,9 @@
 import React, {useState} from 'react';
+import {Warning} from "@phosphor-icons/react";
+import {useTranslation} from "react-i18next";
 
 export default function UserEditModal ({ client, setOpenUserEditModal, updateClient }){
+    const {t} = useTranslation();
     const [firstName, setFirstName] = useState(client.firstName);
     const [lastName, setLastName] = useState(client.lastName);
     const [email, setEmail] = useState(client.email);
@@ -31,23 +34,24 @@ export default function UserEditModal ({ client, setOpenUserEditModal, updateCli
                                 <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                                     <div className="sm:flex sm:items-start">
                                         <div className="mx-auto flex size-12 shrink-0 items-center justify-center rounded-full bg-red-100 sm:mx-0 sm:size-10">
-                                            <svg className="size-6 text-red-600" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
-                                                <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" />
-                                            </svg>
+                                            <Warning aria-hidden="true" className="size-6 text-red-600" />
                                         </div>
                                         <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-                                            <h3 className="text-base font-semibold text-gray-900" id="modal-title">Edit Item</h3>
+                                            <h3 className="text-base font-semibold text-gray-900" id="modal-title">{t('modalUser.title')}</h3>
+                                            <div className="mt-2">
+                                                <p className="text-sm text-gray-500">
+                                                    {t('modalUser.description')}
+                                                </p>
+                                            </div>
                                             <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                                                 <div className="sm:col-span-3">
-                                                    <label htmlFor="first-name" className="block text-sm/6 font-medium text-gray-900">
-                                                        First name
-                                                    </label>
+                                                    <label htmlFor="first-name" className="block text-sm/6 font-medium text-gray-900">{t('modalUser.firstName')}</label>
                                                     <div className="mt-2">
                                                         <input
                                                             id="first-name"
                                                             name="first-name"
                                                             type="text"
-                                                            placeholder={"First name"}
+                                                            placeholder={t('modalUser.firstName')}
                                                             autoComplete="given-name"
                                                             value={firstName}
                                                             onChange={(e) => setFirstName(e.target.value)}
@@ -58,13 +62,14 @@ export default function UserEditModal ({ client, setOpenUserEditModal, updateCli
 
                                                 <div className="sm:col-span-3">
                                                     <label htmlFor="last-name" className="block text-sm/6 font-medium text-gray-900">
-                                                        Last name
+                                                        {t('modalUser.lastName')}
                                                     </label>
                                                     <div className="mt-2">
                                                         <input
                                                             id="last-name"
                                                             name="last-name"
                                                             type="text"
+                                                            placeholder={t('modalUser.lastName')}
                                                             autoComplete="family-name"
                                                             value={lastName}
                                                             onChange={(e) => setLastName(e.target.value)}
@@ -73,30 +78,28 @@ export default function UserEditModal ({ client, setOpenUserEditModal, updateCli
                                                     </div>
                                                 </div>
                                                 <div className="sm:col-span-4">
-                                                    <label htmlFor="email" className="block text-sm/6 font-medium text-gray-900">
-                                                        Email address
-                                                    </label>
+                                                    <label htmlFor="email" className="block text-sm/6 font-medium text-gray-900">{t('modalUser.email')}</label>
                                                     <div className="mt-2">
                                                         <input
                                                             id="email"
                                                             name="email"
                                                             type="email"
                                                             autoComplete="email"
+                                                            placeholder={t('modalUser.email')}
                                                             value={email}
                                                             onChange={(e) => setEmail(e.target.value)}
                                                             className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                                                         />
                                                     </div>
                                                 </div> <div className="sm:col-span-4">
-                                                    <label htmlFor="job" className="block text-sm/6 font-medium text-gray-900">
-                                                        Job Name
-                                                    </label>
+                                                    <label htmlFor="job" className="block text-sm/6 font-medium text-gray-900">{t('modalUser.jobTitle')}</label>
                                                     <div className="mt-2">
                                                         <input
                                                             id="job"
                                                             name="job"
                                                             type="job"
                                                             autoComplete="job"
+                                                            placeholder={t('modalUser.jobTitle')}
                                                             value={job}
                                                             onChange={(e) => setJob(e.target.value)}
                                                             className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
@@ -105,7 +108,7 @@ export default function UserEditModal ({ client, setOpenUserEditModal, updateCli
                                                 </div>
                                                 <div className="sm:col-span-2 sm:col-start-1">
                                                     <label htmlFor="number" className="block text-sm/6 font-medium text-gray-900">
-                                                        number
+                                                        {t('modalUser.phone')}
                                                     </label>
                                                     <div className="mt-3">
                                                         <input
@@ -113,6 +116,7 @@ export default function UserEditModal ({ client, setOpenUserEditModal, updateCli
                                                             name="number"
                                                             type="text"
                                                             autoComplete="address-level2"
+                                                            placeholder={t('modalUser.phone')}
                                                             value={number}
                                                             onChange={(e) => setNumber(e.target.value)}
                                                             className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
@@ -125,10 +129,10 @@ export default function UserEditModal ({ client, setOpenUserEditModal, updateCli
                                 </div>
                                 <div className="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
                                     <button type="button" onClick={handleSave} className="inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-red-500 sm:ml-3 sm:w-auto">
-                                        Save
+                                        {t('modalUser.save')}
                                     </button>
                                     <button type="button" onClick={() => setOpenUserEditModal(false)} className="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 shadow-xs ring-gray-300 ring-inset hover:bg-gray-50 sm:mt-0 sm:w-auto">
-                                        Cancel
+                                        {t('modalUser.cancel')}
                                     </button>
                                 </div>
                             </div>

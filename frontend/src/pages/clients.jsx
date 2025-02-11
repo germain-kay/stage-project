@@ -32,7 +32,7 @@ function Page() {
             <header className="bg-white shadow">
                 <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
                     <h1 className="text-3xl font-bold tracking-tight text-gray-900">
-                        {t('header-title.customer')}
+                        {t('customers.title')}
                     </h1>
                 </div>
             </header>
@@ -45,7 +45,7 @@ function Page() {
                                     type="button"
                                     onClick={onActionClick}>
                                 <span className="sr-only">Action button</span>
-                                Actions
+                                {t('customersActions.title')}
                                 <ArrowBendRightDown size={10}/>
                             </button>
                             {menuActionOpen && (
@@ -54,26 +54,25 @@ function Page() {
                                         aria-labelledby="dropdownActionButton">
                                         <li>
                                             <a href="#"
-                                               className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Reward</a>
+                                               className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">{t('customersActions.reward')}</a>
                                         </li>
                                         <li>
                                             <a href="#"
-                                               className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Promote</a>
+                                               className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">{t('customersActions.promote')}</a>
                                         </li>
                                         <li>
                                             <a href="#"
-                                               className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Activate
-                                                account</a>
+                                               className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">{t('customersActions.activateUser')}</a>
                                         </li>
                                     </ul>
                                     <div className="py-1">
                                         <a href="#"
-                                           className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Delete
-                                            User</a>
+                                           className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">{t('customersActions.deleteUser')}</a>
                                     </div>
-                                </div>)}
+                                </div>)
+                            }
                         </div>
-                        <label htmlFor="table-search" className="sr-only">Search</label>
+                        <label htmlFor="table-search" className="sr-only">{t('customers.search')}</label>
                         <div className="relative">
                             <div
                                 className="absolute inset-y-0 rtl:inset-r-0 start-0 flex items-center ps-3 pointer-events-none">
@@ -81,7 +80,7 @@ function Page() {
                             </div>
                             <input type="text" id="table-search-users"
                                    className="block p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-80 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                   placeholder="Search for users"/>
+                                   placeholder={t('customers.searchPlacerholder')}/>
                         </div>
                     </div>
                     <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
@@ -96,16 +95,16 @@ function Page() {
                                 </div>
                             </th>
                             <th scope="col" className="px-6 py-3">
-                                Name
+                                {t('customers.name')}
                             </th>
                             <th scope="col" className="px-6 py-3">
-                                Position
+                                {t('customers.jobTitle')}
                             </th>
                             <th scope="col" className="px-6 py-3">
-                                Number
+                                {t('customers.number')}
                             </th>
                             <th scope="col" className="px-6 py-3">
-                                Action
+                                {t('customers.actionUser')}
                             </th>
                         </tr>
                         </thead>
@@ -142,7 +141,7 @@ function Page() {
                                         type="button"
                                         onClick={() => handleEditClick(client)}
                                         className="font-medium text-blue-600 dark:text-blue-500 hover:underline">
-                                        Edit user
+                                        {t('customers.editUser')}
                                     </button>
                                 </td>
                             </tr>

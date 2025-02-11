@@ -78,6 +78,32 @@
     "forgot-pass": "Mot de passe oublié ?",
     "sign-in": "Se connecter"
 
+  },
+  "customers": {
+    "title": "Clients",
+    "search": "Rechercher",
+    "searchPlacerholder": "Rechercher un client",
+    "jobTitle": "Titre de l'emploi",
+    "number": "Numéro de téléphone",
+    "editUser": "Modifier l'utilisateur",
+    "actionUser": "Action"
+  },
+  "customersActions": {
+    "title": "Actions",
+    "reward": "Récompenser",
+    "promote": "Promouvoir",
+    "activateUser": "Activer l'utilisateur",
+    "deleteUser": "Supprimer l'utilisateur"
+  },
+  "modalUser": {
+    "title": "Modifier l'utilisateur",
+    "description": "Êtes-vous sûr de vouloir modifier ce compte ? Toutes vos données seront définitivement supprimées.\nCette action ne peut être annulée.",
+    "firstName": "Nom",
+    "lastName": "Prénom",
+    "jobTitle": "Titre de l'emploi",
+    "phone": "Téléphone",
+    "email": "Email",
+    "save": "Sauvegarder",
+    "cancel": "Annuler"
   }
-
 }
