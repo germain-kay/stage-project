@@ -107,6 +107,13 @@
     "email": "E-Mail",
     "save": "Speichern",
     "cancel": "Stornieren"
+  },
+  "products": {
+    "header": "Seite Produkte",
+    "title": "Liste der Produkte",
+    "statusAvailable": "Verfügbar",
+    "statusUnavailable": "Nicht verfügbar",
+    "statusSoon": "Bald verfügbar",
+    "cart": "In den Warenkorb"
   }
-
 }

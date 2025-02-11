@@ -110,5 +110,13 @@
     "email": "Email",
     "save": "Save",
     "cancel": "Cancel"
+  },
+  "products": {
+    "header": "Products page ",
+    "title": "List of products",
+    "statusAvailable": "Available",
+    "statusUnavailable": "Unavailable",
+    "statusSoon": "Soon",
+    "cart": "Add to cart"
   }
 }
