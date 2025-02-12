@@ -23,6 +23,7 @@ function Page() {
                     <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
                         <h2 className="sr-only">{t('products.title')}</h2>
                         <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+                            {/*Boucle : Liste Produits*/}
                             {products.map((product) => (
                                 <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                                     <a href="#">
@@ -36,6 +37,7 @@ function Page() {
                                         </a>
                                         <div className="flex items-center mt-2.5 mb-5">
                                             <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-3">{product.notation}</span>
+                                            <Star size={16} weight={"fill"} color="rgb(253 224 71)"/>
                                         </div>
                                         <div className="flex items-center justify-between">
                                             <span className="text-3xl font-bold text-gray-900 dark:text-white">${product.price}</span>
