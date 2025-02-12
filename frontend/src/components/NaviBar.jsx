@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import React, { useState } from 'react';
 import { isMobile } from "react-device-detect";
-import { Bell, Globe } from "@phosphor-icons/react";
+import { Bell, Globe, TextIndent  } from "@phosphor-icons/react";
 import i18n from "i18next";
 
 export default function NaviBar (){
@@ -13,6 +13,11 @@ export default function NaviBar (){
     de: { nativeName: 'Deutsch' },
     fr: { nativeName: 'Français' },
   };
+  const navItems = [
+    { path: '/home', label: t('nav-title.home') },
+    { path: '/clients', label: t('nav-title.customer') },
+    { path: '/products', label: t('nav-title.products') },
+  ];
 
   function onProfileClick(){
     //Fait quelque chose quand je clic sur le Profile
@@ -97,13 +102,19 @@ export default function NaviBar (){
           <div className="flex h-16 items-center justify-between">
             <div className="flex items-center">
               <div className="shrink-0">
-                <img className="size-8" src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company" />
+                <TextIndent size={32} className="bg-white"/>
               </div>
               <div className="hidden md:block">
                 <div className="ml-10 flex items-baseline space-x-4">
-                  <a href='/home' className="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white">{t('nav-title.home')}</a>
-                  <a href='/clients' className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">{t('nav-title.customer')}</a>
-                  <a href='/products' className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">{t('nav-title.products')}</a>
+                  {navItems.map((item) => (
+                    <a
+                        key={item.path}
+                        href={item.path}
+                        className={`rounded-md px-3 py-2 text-sm font-medium ${location.pathname === item.path ? 'active' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}`}
+                    >
+                      {item.label}
+                    </a>
+                ))}
                 </div>
               </div>
             </div>

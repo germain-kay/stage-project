@@ -20,10 +20,10 @@ const createFakeProduits =() =>({
     department: faker.commerce.department(),
     price: faker.commerce.price(),
     statut: faker.helpers.arrayElement([i18n.t('products.statutAvailable'), i18n.t('products.statutSoon'), i18n.t('products.statutUnavailable')]),
-    notation: faker.helpers.rangeToNumber({min: 1, max: 5}),
+    rating: faker.helpers.rangeToNumber({min: 1, max: 5}),
 
 });
 
 export const CLIENTS_LIST = Array.from({length:10}).map(createFakeClients);
 
-export const PRODUITS_LIST = Array.from({length:10}).map(createFakeProduits);
+export const PRODUCTS_LIST = Array.from({length:10}).map(createFakeProduits);

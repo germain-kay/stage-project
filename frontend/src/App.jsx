@@ -5,7 +5,7 @@ import i18n from "./i18n";
 import {Home} from "./pages/home.jsx";
 import {Clients} from "./pages/clients.jsx";
 import {Layout} from "./components/Layout.jsx";
-import {Produits} from "./pages/products.jsx";
+import {Products} from "./pages/products.jsx";
 import {Profile} from "./pages/profile.jsx";
 import {Login} from "./pages/login.jsx";
 
@@ -21,7 +21,7 @@ const App = () => {
                     <Route path="/" element={<Login/>}/>
                     <Route path="/home" element={<Home/>}/>
                     <Route path="/clients" element={<Clients/>}  />
-                    <Route path="/products" element={<Produits/>}  />
+                    <Route path="/products" element={<Products/>}  />
                     <Route path="/profile" element={<Profile/>}  />
                 </Route>
             </Routes>
