@@ -1,9 +1,22 @@
-import React, { Suspense } from 'react';
+import React, {Suspense} from 'react';
 import { useTranslation } from 'react-i18next';
 import { TextIndent  } from "@phosphor-icons/react";
+import authUser from "../api/auth.js";
 
 function Page() {
     const {t    } = useTranslation();
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        try {
+            const email = event.target.email.value;
+            const password = event.target.password.value;
+            const user = await authUser(email, password);
+            console.log('Successfully authenticated:', user);
+        } catch (error) {
+            console.error('Authentication error:', error);
+        }
+    };
 
     return (
         <>
@@ -16,7 +29,7 @@ function Page() {
                 </div>
 
                 <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-                    <form action="/home" className="space-y-6">
+                    <form /*action="/home"*/ onSubmit={handleSubmit} className="space-y-6" encType={"multipart/form-data"} method={"post"}>
                         <div>
                             <label htmlFor="email" className="block text-sm/6 font-medium text-gray-900">
                                 {t('login.email')}

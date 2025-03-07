@@ -114,9 +114,11 @@
   "products": {
     "header": "Products page ",
     "title": "List of products",
-    "statusAvailable": "Available",
-    "statusUnavailable": "Unavailable",
-    "statusSoon": "Soon",
-    "cart": "Add to cart"
+    "name": "Name",
+    "price": "Price",
+    "rating": "Rating",
+    "cancel": "Cancel",
+    "save": "Save",
+    "editProduct": "Edit Product"
   }
 }

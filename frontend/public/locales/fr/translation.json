@@ -101,9 +101,12 @@
   "products": {
     "header": "Produits",
     "title": "Liste des produits",
-    "statutAvailable": "Disponible",
-    "statutUnavailable": "Indisponible",
-    "statutSoon": "En cours de préparation",
-    "cart": "Ajouter au panier"
+    "name": "Nom",
+    "price": "Prix",
+    "rating": "Évaluation",
+    "cart": "Ajouter au panier",
+    "cancel": "Annuler",
+    "save": "Sauvegarder",
+    "editProduct": "Modifier le produit"
   }
 }

@@ -1,15 +1,29 @@
-import React, {Suspense, useState} from 'react';
+import React, {Suspense, useEffect, useState} from 'react';
 import { useTranslation } from 'react-i18next';
 import { Star } from "@phosphor-icons/react";
 
 import ProductsEditModal from '../components/modals/productsedit';
-import { PRODUCTS_LIST } from '../utils/samples';
+
+import getProducts from '../api/products';
 
 function Page() {
     const {t} = useTranslation();
     const [openProductsEditModal, setOpenProductsEditModal] = useState(false);
     const [selectedProduct, setSelectedProduct] = useState(null);
-    const [products, setProducts] = useState(PRODUCTS_LIST);
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        const fetchProducts = async () => {
+            try {
+                const data = await getProducts();
+                setProducts(data);
+            } catch (error) {
+                console.error('Failed to fetch clients:', error);
+            }
+        };
+
+        fetchProducts();
+    }, []);
 
     function handleEditClick(product) {
         setSelectedProduct(product);

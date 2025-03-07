@@ -1,18 +1,31 @@
-import React, {Suspense, useState} from 'react';
+import React, { Suspense, useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import {ArrowBendRightDown, MagnifyingGlass } from "@phosphor-icons/react";
+import { ArrowBendRightDown, MagnifyingGlass } from "@phosphor-icons/react";
 
 import UserEditModal from '../components/modals/useredit';
-import { CLIENTS_LIST } from '../utils/samples';
+import getClients from '../api/clients'; // Import the getClients function
 
 function Page() {
-    const {t} = useTranslation();
+    const { t } = useTranslation();
     const [menuActionOpen, setMenuActionOpen] = useState(false);
     const [openUserEditModal, setOpenUserEditModal] = useState(false);
     const [selectedClient, setSelectedClient] = useState(null);
-    const [clients, setClients] = useState(CLIENTS_LIST);
+    const [clients, setClients] = useState([]);
 
-    function onActionClick(){
+    useEffect(() => {
+        const fetchClients = async () => {
+            try {
+                const data = await getClients();
+                setClients(data);
+            } catch (error) {
+                console.error('Failed to fetch clients:', error);
+            }
+        };
+
+        fetchClients();
+    }, []);
+
+    function onActionClick() {
         setMenuActionOpen(!menuActionOpen);
     }
 
@@ -46,7 +59,7 @@ function Page() {
                                     onClick={onActionClick}>
                                 <span className="sr-only">Action button</span>
                                 {t('customersActions.title')}
-                                <ArrowBendRightDown size={10}/>
+                                <ArrowBendRightDown size={10} />
                             </button>
                             {menuActionOpen && (
                                 <div id="dropdownAction" className=" absolute z-10 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
@@ -76,11 +89,11 @@ function Page() {
                         <div className="relative">
                             <div
                                 className="absolute inset-y-0 rtl:inset-r-0 start-0 flex items-center ps-3 pointer-events-none">
-                                <MagnifyingGlass size={16} color="rgb(107 114 128)"/>
+                                <MagnifyingGlass size={16} color="rgb(107 114 128)" />
                             </div>
                             <input type="text" id="table-search-users"
                                    className="block p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-80 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                   placeholder={t('customers.searchPlacerholder')}/>
+                                   placeholder={t('customers.searchPlacerholder')} />
                         </div>
                     </div>
                     <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
@@ -90,7 +103,7 @@ function Page() {
                             <th scope="col" className="p-4">
                                 <div className="flex items-center">
                                     <input id="checkbox-all-search" type="checkbox"
-                                           className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
+                                           className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
                                     <label htmlFor="checkbox-all-search" className="sr-only">checkbox</label>
                                 </div>
                             </th>
@@ -114,7 +127,7 @@ function Page() {
                                 <td className="w-4 p-4">
                                     <div className="flex items-center">
                                         <input id="checkbox-table-search-1" type="checkbox"
-                                               className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
+                                               className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
                                         <label htmlFor="checkbox-table-search-1" className="sr-only">checkbox</label>
                                     </div>
                                 </td>
@@ -122,7 +135,7 @@ function Page() {
                                     className="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
                                     {<img className="w-10 h-10 rounded-full"
                                           src={client.avatar}
-                                          alt="Jese image"/>}
+                                          alt="Jese image" />}
                                     <div className="ps-3">
                                         <div className="text-base font-semibold">{client.lastName} {client.firstName}</div>
                                         <div className="font-normal text-gray-500">{client.email}</div>
@@ -149,7 +162,7 @@ function Page() {
                         </tbody>
                     </table>
                 </div>
-                {openUserEditModal && <UserEditModal client={selectedClient} setOpenUserEditModal={setOpenUserEditModal} updateClient={updateClient}/>}
+                {openUserEditModal && <UserEditModal client={selectedClient} setOpenUserEditModal={setOpenUserEditModal} updateClient={updateClient} />}
             </main>
         </div>
     );
@@ -158,7 +171,7 @@ function Page() {
 export function Clients() {
     return (
         <Suspense fallback="...is loading">
-            <Page/>
+            <Page />
         </Suspense>
     );
 }
