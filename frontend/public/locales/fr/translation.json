@@ -68,7 +68,8 @@
     "email": "Adresse e-mail",
     "password": "Mot de passe",
     "forgot-pass": "Mot de passe oublié ?",
-    "sign-in": "Se connecter"
+    "sign-in": "Se connecter",
+    "errorlogin": "Authentification échouée. Veuillez vérifier votre e-mail et votre mot de passe."
 
   },
   "customers": {

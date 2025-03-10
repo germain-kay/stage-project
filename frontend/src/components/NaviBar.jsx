@@ -192,7 +192,7 @@ export default function NaviBar (){
                            id="user-menu-item-0">{t('usernav-title.profile')}</a>
                         <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex="-1"
                            id="user-menu-item-1">{t('usernav-title.settings')}</a>
-                        <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex="-1"
+                        <a href="/" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex="-1"
                            id="user-menu-item-2">{t('usernav-title.sign-out')}</a>
                       </div>)
                   }

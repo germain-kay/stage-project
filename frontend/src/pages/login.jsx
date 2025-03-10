@@ -1,10 +1,15 @@
-import React, {Suspense} from 'react';
+import React, {Suspense, useState} from 'react';
 import { useTranslation } from 'react-i18next';
 import { TextIndent  } from "@phosphor-icons/react";
+import {useNavigate} from "react-router-dom";
+
 import authUser from "../api/auth.js";
+import Loginerror from "../components/modals/loginerror.jsx";
 
 function Page() {
-    const {t    } = useTranslation();
+    const {t} = useTranslation();
+    const [openLoginError, setOpenLoginError] = useState(false);
+    const navigate = useNavigate();
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -13,13 +18,16 @@ function Page() {
             const password = event.target.password.value;
             const user = await authUser(email, password);
             console.log('Successfully authenticated:', user);
+            navigate("/home");
         } catch (error) {
             console.error('Authentication error:', error);
+            setOpenLoginError(true);
         }
     };
 
     return (
         <>
+            {openLoginError && <Loginerror setOpenLoginError={setOpenLoginError}/>}
             <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
                 <div className="sm:mx-auto sm:w-full sm:max-w-sm">
                     < TextIndent className="bg-black text-white mx-auto h-10 w-auto"/>
@@ -76,8 +84,8 @@ function Page() {
                             </button>
                         </div>
                     </form>
-
                 </div>
+
             </div>
         </>
     )
