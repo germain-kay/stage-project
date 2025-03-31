@@ -5,12 +5,13 @@
 import { PRODUCTS_LIST } from '../../utils/samples';*/
 
 //Importer CLIENTS_LIST
-const { CLIENTS_LIST } = require('../frontend/src/utils/samples');
-const { PRODUCTS_LIST } = require('../frontend/src/utils/samples');
+require('dotenv').config();
+const Client = require('./models/clients');
+const Product = require('./models/products');
 const express = require('express');
 const app = express();
 const cors = require('cors');
-const port = 3001;
+const port = process.env.PORT;
 
 app.use(express.json());
 app.use(cors());
@@ -41,12 +42,20 @@ app.post('/api/auth', (req, res) => {
 });
 
 // Intercept "GET /api/clients" requests
-app.get('/api/clients', (req, res) => {
-    return res.json(Array.from(CLIENTS_LIST.values()))
+app.get('/api/clients', async (req, res) => {
+    try {
+        const clients = await Client.find();
+        res.json(clients);
+    } catch (error) {
+        res.status(500).json({ message: 'Erreur lors de la récupération des clients' });
+    }
 });
 
-// Intercept "GET /api/products" requests
-app.get('/api/products', (req, res) => {
-    return res.json(Array.from(PRODUCTS_LIST.values()))
+app.get('/api/products', async (req, res) => {
+    try {
+        const products = await Product.find();
+        res.json(products);
+    } catch (error) {
+        res.status(500).json({ message: 'Erreur lors de la récupération des produits' });
+    }
 });
-
