@@ -55,6 +55,7 @@ for (let i = 0; i < 50; i++) {
     console.log(newProduct.productName);
 }
 Product.insertMany(products);
+
 module.exports = Product;
 
 

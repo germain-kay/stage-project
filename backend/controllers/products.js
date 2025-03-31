@@ -1,6 +1,14 @@
-// const mongoose= require('mongoose');
-// const Product = require('../models/products.js')
-//
+const productRouter = require("express").Router();
+const Product = require('../models/products.js')
+
+productRouter.get('/', (req, res) => {
+    Product.find({}).then((products) => {
+            res.json(products);
+        })
+})
+
+module.exports = productRouter;
+
 // const getProducts = ((req, res) => {
 //     Product.find({})
 //         .then(result => res.status(200).json({ result }))
@@ -38,5 +46,5 @@
 //     updateProduct,
 //     deleteProduct
 // }
-//
-//
+
+

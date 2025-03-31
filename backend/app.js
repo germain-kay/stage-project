@@ -1,16 +1,11 @@
-// Load environment variables
-//import "./loadEnvironment.mjs";
-/*
-* import { CLIENTS_LIST } from '../../utils/samples';
-import { PRODUCTS_LIST } from '../../utils/samples';*/
-
-//Importer CLIENTS_LIST
 require('dotenv').config();
-const Client = require('./models/clients');
-const Product = require('./models/products');
 const express = require('express');
 const app = express();
+// const config = require('./utils/config')
+// const logger = require('./utils/logger')
 const cors = require('cors');
+const productRouter = require('./controllers/products');
+const clientRouter = require('./controllers/clients');
 const port = process.env.PORT;
 
 app.use(express.json());
@@ -41,21 +36,23 @@ app.post('/api/auth', (req, res) => {
     }
 });
 
-// Intercept "GET /api/clients" requests
-app.get('/api/clients', async (req, res) => {
-    try {
-        const clients = await Client.find();
-        res.json(clients);
-    } catch (error) {
-        res.status(500).json({ message: 'Erreur lors de la récupération des clients' });
-    }
-});
+app.use('/api/clients', clientRouter);
+// // Intercept "GET /api/clients" requests
+// app.get('/api/clients', async (req, res) => {
+//     try {
+//         const clients = await Client.find();
+//         res.json(clients);
+//     } catch (error) {
+//         res.status(500).json({ message: 'Erreur lors de la récupération des clients' });
+//     }
+// });
 
-app.get('/api/products', async (req, res) => {
-    try {
-        const products = await Product.find();
-        res.json(products);
-    } catch (error) {
-        res.status(500).json({ message: 'Erreur lors de la récupération des produits' });
-    }
-});
+app.use('/api/products', productRouter);
+// app.get('/api/products', async (req, res) => {
+//     try {
+//         const products = await Product.find();
+//         res.json(products);
+//     } catch (error) {
+//         res.status(500).json({ message: 'Erreur lors de la récupération des produits' });
+//     }
+// });
