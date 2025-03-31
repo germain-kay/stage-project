@@ -1,25 +1,31 @@
 // Load environment variables
 //import "./loadEnvironment.mjs";
-
-const express = require('express')
-const app = express()
-const port = 3000
-
-app.get('/', (req, res) => {
-    res.send('Hello World!')
-})
-
 /*
-app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
-})
+* import { CLIENTS_LIST } from '../../utils/samples';
+import { PRODUCTS_LIST } from '../../utils/samples';*/
 
-app.post('/api/auth', async ({ request }) => {
-    const { email, password } = await request.json();
+//Importer CLIENTS_LIST
+const { CLIENTS_LIST } = require('../frontend/src/utils/samples');
+const { PRODUCTS_LIST } = require('../frontend/src/utils/samples');
+const express = require('express');
+const app = express();
+const cors = require('cors');
+const port = 3001;
+
+app.use(express.json());
+app.use(cors());
+
+
+app.listen(port, () => {
+    console.log(`Server started on port ${port}`)
+});
+
+app.post('/api/auth', (req, res) => {
+    const { email, password } = req.json();
 
     // Simple authentication logic
     if (email === 'admin@example.com' && password === 'password') {
-        return HttpResponse.json({
+        return res.json({
             token: 'fake-jwt-token',
             user: {
                 id: '1',
@@ -29,17 +35,18 @@ app.post('/api/auth', async ({ request }) => {
             },
         });
     } else {
-        return new HttpResponse('Invalid username or password', { status: 400 })
+        res.status(400).json('Invalid username or password');
+
     }
-}),
+});
 
 // Intercept "GET /api/clients" requests
-app.get('/api/clients', () => {
-    return HttpResponse.json(Array.from(CLIENTS_LIST.values()))
-}),
-// Intercept "GET /api/products" requests
-app.get('/api/products', () => {
-    return HttpResponse.json(Array.from(PRODUCTS_LIST.values()))
-})
+app.get('/api/clients', (req, res) => {
+    return res.json(Array.from(CLIENTS_LIST.values()))
+});
 
- */
+// Intercept "GET /api/products" requests
+app.get('/api/products', (req, res) => {
+    return res.json(Array.from(PRODUCTS_LIST.values()))
+});
+

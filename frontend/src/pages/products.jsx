@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next';
 import { Star } from "@phosphor-icons/react";
 
 import ProductsEditModal from '../components/modals/productsedit';
-
 import getProducts from '../api/products';
 
 function Page() {

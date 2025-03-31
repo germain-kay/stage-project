@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const getProducts = async () => {
     try {
-        const response = await axios.get('/api/products');
+        const response = await axios.get('http://localhost:3001/api/products');
         return response.data;
     } catch (error) {
         if (error.response) {

@@ -1,5 +1,4 @@
 import {faker} from "@faker-js/faker/locale/en_US";
-import i18n from '../i18n';
 
 const createFakeClients =() =>({
      id: faker.string.uuid(),
@@ -17,9 +16,7 @@ const createFakeProduits =() =>({
     image: faker.image.url({width: 1024, height :1024}),
     productName: faker.commerce.productName(),
     description: faker.commerce.productDescription(),
-    department: faker.commerce.department(),
     price: faker.commerce.price(),
-    statut: faker.helpers.arrayElement([i18n.t('products.statutAvailable'), i18n.t('products.statutSoon'), i18n.t('products.statutUnavailable')]),
     rating: faker.helpers.rangeToNumber({min: 1, max: 5}),
 
 });

@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const getClients = async () => {
     try {
-        const response = await axios.get('/api/clients');
+        const response = await axios.get('http://localhost:3001/api/clients');
         return response.data;
     } catch (error) {
         if (error.response) {
