@@ -1,60 +1,37 @@
-require('dotenv').config();
-const express = require('express');
-const app = express();
-// const config = require('./utils/config')
-// const logger = require('./utils/logger')
-const cors = require('cors');
-const productRouter = require('./controllers/products');
-const clientRouter = require('./controllers/clients');
-const authRouter = require('./controllers/auth');
-const port = process.env.PORT;
+const express = require('express')
+const config = require('./utils/config')
+const logger = require('./utils/logger')
+const productRouter = require('./controllers/products')
+const clientRouter = require('./controllers/clients')
+const authRouter = require('./controllers/auth')
+const middleware = require('./utils/middleware')
+const mongoose = require('mongoose')
 
-app.use(express.json());
-app.use(cors());
+const app = express()
 
+logger.info('Connecting to', config.MONGODB_URI)
 
-app.listen(port, () => {
-    console.log(`Server started on port ${port}`)
-});
+mongoose
+  .connect(config.MONGODB_URI)
+  .then(() => {
+    logger.info('Connected to MongoDB')
+  })
+  .catch((error) => {
+    logger.error('error connecting to MongoDB', error.message)
+  })
 
-app.use('/api/auth', authRouter);
-// app.post('/api/auth', (req, res) => {
-//     const { email, password } = req.json();
-//
-//     // Simple authentication logic
-//     if (email === 'admin@example.com' && password === 'password') {
-//         return res.json({
-//             token: 'fake-jwt-token',
-//             user: {
-//                 id: '1',
-//                 email: 'admin@example.com',
-//                 firstName: 'Admin',
-//                 lastName: 'User',
-//             },
-//         });
-//     } else {
-//         res.status(400).json('Invalid username or password');
-//
-//     }
-// });
+app.use(express.static('dist'))
+app.use(express.json())
+app.use(middleware.requestLogger)
 
-app.use('/api/clients', clientRouter);
-// // Intercept "GET /api/clients" requests
-// app.get('/api/clients', async (req, res) => {
-//     try {
-//         const clients = await Client.find();
-//         res.json(clients);
-//     } catch (error) {
-//         res.status(500).json({ message: 'Erreur lors de la récupération des clients' });
-//     }
-// });
+// Intercepte le router Auth
+app.use('/api/auth', authRouter)
+// Intercepte le router Client
+app.use('/api/clients', clientRouter)
+// Intercepte le router Produits
+app.use('/api/products', productRouter)
 
-app.use('/api/products', productRouter);
-// app.get('/api/products', async (req, res) => {
-//     try {
-//         const products = await Product.find();
-//         res.json(products);
-//     } catch (error) {
-//         res.status(500).json({ message: 'Erreur lors de la récupération des produits' });
-//     }
-// });
+app.use(middleware.unknownEndpoint)
+app.use(middleware.errorHandler)
+
+module.exports = app

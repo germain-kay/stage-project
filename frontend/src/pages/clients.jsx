@@ -1,4 +1,4 @@
-import React, { Suspense, useState, useEffect } from 'react';
+import { Suspense, useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ArrowBendRightDown, MagnifyingGlass } from "@phosphor-icons/react";
 
