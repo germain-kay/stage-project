@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { ArrowBendRightDown, MagnifyingGlass } from "@phosphor-icons/react";
 
 import UserEditModal from '../components/modals/useredit';
-import getClients from '../api/clients'; // Import the getClients function
+import {deleteClient, getClients} from '../api/clients'; // Import the getClients function
 
 function Page() {
     const { t } = useTranslation();
@@ -24,6 +24,26 @@ function Page() {
 
         fetchClients();
     }, []);
+
+    // Création d'un client
+    // const createNewClient = async (newClient) => {
+    //     try {
+    //         const createdClient = await createClient(newClient);
+    //         setClients([...clients, createdClient]);
+    //     } catch (error) {
+    //         console.error('Failed to create client:', error);
+    //     }
+    // };
+    // Supprestion d'un client
+    const deleteClientById = async (id) => {
+        try {
+            await deleteClient(id);
+            setClients(clients.filter(client => client.id !== id));
+        } catch (error) {
+            console.error('Failed to delete client:', error);
+        }
+    };
+
 
     function onActionClick() {
         setMenuActionOpen(!menuActionOpen);
@@ -119,14 +139,17 @@ function Page() {
                             <th scope="col" className="px-6 py-3">
                                 {t('customers.actionUser')}
                             </th>
+                            <th scope="col" className="px-6 py-3">
+                                {t('customers.deleteUser')}
+                            </th>
                         </tr>
                         </thead>
                         <tbody>
                         {clients.map((client) => (
-                            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                            <tr key={client.id} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                                 <td className="w-4 p-4">
                                     <div className="flex items-center">
-                                        <input id="checkbox-table-search-1" type="checkbox"
+                                      <input id="checkbox-table-search-1" type="checkbox"
                                                className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
                                         <label htmlFor="checkbox-table-search-1" className="sr-only">checkbox</label>
                                     </div>
@@ -155,6 +178,14 @@ function Page() {
                                         onClick={() => handleEditClick(client)}
                                         className="font-medium text-blue-600 dark:text-blue-500 hover:underline">
                                         {t('customers.editUser')}
+                                    </button>
+                                </td>
+                                <td className="px-6 py-4">
+                                    <button
+                                        type="button"
+                                        onClick={() => deleteClientById(client.id)}
+                                        className="font-medium text-red-600 dark:text-red-500 hover:underline">
+                                        {t('customers.deleteUserID')}
                                     </button>
                                 </td>
                             </tr>

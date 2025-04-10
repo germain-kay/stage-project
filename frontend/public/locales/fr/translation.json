@@ -79,7 +79,9 @@
     "jobTitle": "Titre de l'emploi",
     "number": "Numéro de téléphone",
     "editUser": "Modifier l'utilisateur",
-    "actionUser": "Action"
+    "actionUser": "Modification",
+    "deleteUser": "Suppression",
+    "deleteUserID": "Supprimer l'utilisateur"
   },
   "customersActions": {
     "title": "Actions",

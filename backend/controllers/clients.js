@@ -1,73 +1,73 @@
-const clientRouter = require("express").Router();
+const clientRouter = require('express').Router()
 const Client = require('../models/clients')
 
 clientRouter.get('/', (req, res) => {
-    Client.find({}).then((clients) => {
-        res.json(clients);
-    })
+  Client.find({}).then((clients) => {
+    res.json(clients)
+  })
 
 })
 
 clientRouter.get('/:id', (req, res, next) => {
-    Client.findById(req.params.id)
-        .then(client => {
-            if (client) {
-                res.json(client);
-            } else  {
-                res.status(404).end()
-            }
-        })
-        .catch(error => next(error));
+  Client.findById(req.params.id)
+    .then(client => {
+      if (client) {
+        res.json(client)
+      } else  {
+        res.status(404).end()
+      }
+    })
+    .catch(error => next(error))
 })
 
 clientRouter.post('/', (req, res, next) => {
-    const body = req.body;
+  const body = req.body
 
-    const client = new Client({
-        firstName: body.firstName,
-        lastName: body.lastName,
-        email: body.email,
-        avatar: body.avatar,
-        job: body.job,
-        number: body.number,
+  const client = new Client({
+    firstName: body.firstName,
+    lastName: body.lastName,
+    email: body.email,
+    avatar: body.avatar,
+    job: body.job,
+    number: body.number,
+  })
+
+  client.save()
+    .then(savedclient => {
+      res.status(201).json(savedclient)
     })
-
-    client.save()
-        .then(savedclient => {
-            res.status(201).json(savedclient);
-        })
-        .catch(error => next(error))
+    .catch(error => next(error))
 })
 
 clientRouter.delete('/:id', (req, res, next) => {
-    Client.findByIdAndDelete(req.params.id)
-        .then(() => {
-            res.status(204).end();
-        })
-        .catch(error => next(error))
+  Client.findByIdAndDelete(req.params.id)
+    .then(() => {
+      res.status(204).end()
+    })
+    .catch(error => next(error))
 })
 
 clientRouter.put('/:id', (req, res, next) => {
-    const {firstName, lastName, email, job, number} = req.body;
+  const { firstName, lastName, email, job, number } = req.body
 
-    Client.findById(req.params.id)
-        .then(client => {
-            if (!client) {
-                return res.status(404).end;
-            }
+  Client.findById(req.params.id)
+    .then(client => {
+      if (!client) {
+        return res.status(404).end
+      }
 
-            client.firstName = firstName;
-            client.lastName = lastName;
-            client.email = email;
-            client.job = job;
-            client.number = number;
+      client.firstName = firstName
+      client.lastName = lastName
+      client.email = email
+      client.job = job
+      client.number = number
 
-            return client.save().then(updatedclient => {
-                res.json(updatedclient)
-            })
-        })
-        .catch(error => next(error))
+      return client.save().then(updatedclient => {
+        res.json(updatedclient)
+      })
+    })
+    .catch(error => next(error))
 
 })
 
-module.exports = clientRouter;
+module.exports = clientRouter

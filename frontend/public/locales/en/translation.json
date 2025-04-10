@@ -90,7 +90,9 @@
     "jobTitle": "Job Title",
     "number": "Number",
     "editUser": "Edit User",
-    "actionTable": "Action"
+    "actionTable": "Action",
+    "deleteUser": "Delete",
+    "deleteUserID": "Delete User"
   },
 
   "customersActions": {

@@ -89,7 +89,10 @@
     "jobTitle": "Berufsbezeichnung",
     "number": "Nummer",
     "editUser": "Benutzer bearbeiten",
-    "actionTable": "Aktion"
+    "actionTable": "Aktion",
+    "deleteUser": "Benutzer",
+    "actionUser": "Änderung",
+    "deleteUserID": "Benutzer löschen"
   },
   "customersActions": {
     "title": "Aktionen",
