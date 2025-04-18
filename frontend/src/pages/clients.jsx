@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { ArrowBendRightDown, MagnifyingGlass } from "@phosphor-icons/react";
 
 import UserEditModal from '../components/modals/useredit';
-import {deleteClient, getClients} from '../api/clients'; // Import the getClients function
+import {deleteClient, getClients} from '../api/clients'; // Import the getClients api
 
 function Page() {
     const { t } = useTranslation();
@@ -34,6 +34,7 @@ function Page() {
     //         console.error('Failed to create client:', error);
     //     }
     // };
+
     // Supprestion d'un client
     const deleteClientById = async (id) => {
         try {
@@ -145,6 +146,7 @@ function Page() {
                         </tr>
                         </thead>
                         <tbody>
+                        {/*Map d'un client par ID*/}
                         {clients.map((client) => (
                             <tr key={client.id} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                                 <td className="w-4 p-4">

@@ -1,24 +1,27 @@
 import axios from 'axios';
 
-const getProducts = async () => {
-    try {
-        const response = await axios.get('http://localhost:3001/api/products');
-        return response.data;
-    } catch (error) {
-        if (error.response) {
-            // Server responded with a status other than 200 range
-            console.error('Error response:', error.response.data);
-            throw new Error(error.response.data.message || 'Failed to fetch clients');
-        } else if (error.request) {
-            // Request was made but no response received
-            console.error('Error request:', error.request);
-            throw new Error('No response from server');
-        } else {
-            // Something else happened while setting up the request
-            console.error('Error message:', error.message);
-            throw new Error('Error in setting up request');
-        }
-    }
+const baseUrl = 'http://localhost:3002/api/products';
+
+export const getProducts = async () => {
+    const res = await axios.get(baseUrl);
+    return res.data;
 };
 
-export default getProducts;
+export const getProductById = async (id) => {
+    const res = await axios.get(`${baseUrl}/${id}`);
+    return res.data;
+};
+
+export const createProducts = async (product) => {
+    const res = await axios.post(baseUrl, product);
+    return res.data;
+};
+
+export const updateProduct = async (id, updatedProduct) => {
+    const res = await axios.put(`${baseUrl}/${id}`, updatedProduct);
+    return res.data;
+};
+
+export const deleteProduct = async (id) => {
+    await axios.delete(`${baseUrl}/${id}`);
+};
